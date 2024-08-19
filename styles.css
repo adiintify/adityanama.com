@@ -2,6 +2,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box; /* Ensure padding and border are included in width/height */
 }
 
 /* Canvas should cover the entire screen */
@@ -15,8 +16,8 @@ canvas {
 
 /* Overall Body Styles */
 body {
-  font-family: "Press Start 2P", monospace;
-  background: #000; /* Linear gradient background */
+  font-family: "Press Start 2P", cursive;
+  background: #000;
   color: #00ff00;
   display: flex;
   justify-content: center;
@@ -28,17 +29,21 @@ body {
 
 /* Chatbot Container */
 .chatbot-container {
-  width: 80%;
+  width: 90%;
   max-width: 800px;
-  background-color: #000000;
+  background-color: #1a1a1a;
   border-radius: 8px;
   box-shadow: 0px 0px 15px rgba(0, 255, 0, 0.5);
   overflow: hidden;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  max-height: 90vh; /* Prevent the container from exceeding the viewport height */
 }
 
 /* Chatbot Header */
 .chatbot-header {
-  background-color: #000000;
+  background-color: #0d0d0d;
   padding: 10px;
   text-align: center;
   color: #00ff00;
@@ -57,8 +62,7 @@ body {
 /* Chatbot Messages */
 .chatbot-messages {
   padding: 15px;
-  height: 60vh; /* Adjust height based on screen size */
-  max-height: 400px; /* Prevent excessive growth */
+  flex-grow: 1;
   overflow-y: auto;
   border-bottom: 1px solid #00ff00;
   font-size: 14px; /* Slightly larger for better readability */
@@ -70,7 +74,7 @@ body {
   padding: 15px;
   background-color: #0d0d0d;
   border-left: 4px solid #00ff00;
-  font-family: "Press Start 2P", monospace;
+  font-family: "Press Start 2P", cursive;
   color: #00ff00;
   line-height: 1.6; /* Improved readability */
 }
@@ -101,6 +105,8 @@ body {
   display: flex;
   flex-wrap: wrap; /* Make buttons wrap on smaller screens */
   justify-content: center;
+  overflow-y: auto;
+  max-height: 250px; /* Constrain the height of options area */
 }
 
 .chatbot-options button {
@@ -111,10 +117,14 @@ body {
   margin: 5px;
   border-radius: 5px;
   cursor: pointer;
-  font-family: "Press Start 2P", monospace;
+  font-family: "Press Start 2P", cursive;
+  flex-grow: 1;
+  min-width: 120px;
+  width: 100%; /* Full-width buttons */
 }
 
-.chatbot-options button:hover {
+/* Button Hover Effect */
+chatbot-options button:hover {
   background-color: #00ff00;
   color: #0f0f0f;
 }
@@ -124,15 +134,21 @@ body {
   .chatbot-container {
     width: 100%;
     height: 100vh;
+    border-radius: 0; /* Remove border-radius on small screens for full screen effect */
   }
 
   .chatbot-messages {
     height: 50vh; /* Reduced height for smaller screens */
+    padding: 10px;
   }
 
   .chatbot-message {
     font-size: 12px;
     padding: 10px;
+  }
+
+  .chatbot-options {
+    max-height: 40vh; /* Allow more room for buttons on smaller screens */
   }
 
   .chatbot-options button {
@@ -151,7 +167,7 @@ body {
   color: #00ff00;
   text-decoration: none;
   margin: 0 10px;
-  font-family: "Press Start 2P", monospace;
+  font-family: "Press Start 2P", cursive;
   font-size: 14px;
 }
 
@@ -160,4 +176,50 @@ body {
   background-color: #00ff00;
   padding: 2px 5px;
   border-radius: 5px;
+}
+
+/* Improved Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #00ff00;
+  border-radius: 6px;
+  border: 3px solid #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #00cc00;
+}
+
+.chatbot-messages::-webkit-scrollbar,
+.chatbot-options::-webkit-scrollbar {
+  width: 10px;
+}
+
+.chatbot-messages::-webkit-scrollbar-thumb,
+.chatbot-options::-webkit-scrollbar-thumb {
+  background-color: #00ff00;
+  border-radius: 6px;
+  border: 2px solid #1a1a1a;
+}
+
+.chatbot-messages::-webkit-scrollbar-thumb:hover,
+.chatbot-options::-webkit-scrollbar-thumb:hover {
+  background-color: #00cc00;
+}
+
+.chatbot-messages {
+  scrollbar-width: thin;
+  scrollbar-color: #00ff00 #1a1a1a;
+}
+
+.chatbot-options {
+  scrollbar-width: thin;
+  scrollbar-color: #00ff00 #1a1a1a;
 }
