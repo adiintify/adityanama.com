@@ -174,6 +174,13 @@ function reply(option) {
     case "twitter":
       message = `<p>Follow me on Twitter: <a href="https://twitter.com/adiintify" target="_blank">https://twitter.com/adiintify</a></p>`;
       break;
+    case "passwordGenerator":
+      message = "<p>Redirecting you to the Password Generator...</p>";
+      setTimeout(function () {
+        window.location.href = "password_generator/";
+      }, 1000); // Redirect after 2 seconds
+      break;
+
     default:
       message = "<p>I am not sure about that.</p>";
   }
