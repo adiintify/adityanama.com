@@ -1,155 +1,163 @@
-body {
-  font-family: "Press Start 2P", cursive;
-  background: linear-gradient(
-    90deg,
-    #000000,
-    #012307
-  ); /* Linear gradient background */
-  color: #ffffff;
+/* Resetting margin and padding */
+* {
   margin: 0;
-  padding: 20px;
-  line-height: 1.6;
-  overflow-x: hidden; /* Prevent horizontal scrolling */
+  padding: 0;
 }
 
-a {
-  color: #00ff00;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-header,
-section {
-  margin-bottom: 20px;
-}
-
-h1 {
-  color: #00ff00;
-  text-transform: uppercase;
-  padding-bottom: 5px;
-  margin-bottom: 10px;
-}
-
-h2 {
-  color: #00ff00;
-  text-transform: uppercase;
-  border-bottom: 2px solid #00ff00;
-  padding-bottom: 5px;
-}
-
-h3 {
-  color: #e0e0e0;
-  font-size: 1.2em;
-  margin-bottom: 5px;
-}
-
-.company {
-  color: #4285f4;
-}
-
-ul {
-  list-style-type: disc;
-  padding-left: 20px;
-}
-
-ul li {
-  margin-bottom: 10px;
-  color: #767171; /* Gray color for bullet points, adds warmth and contrast */
-}
-
-.contribution {
-  margin-bottom: 20px;
-}
-
-/* Blinking animation for name */
-.blink {
-  animation: blink 0.5s step-start infinite;
-}
-
-/* Terminal-like animation */
-@keyframes blink {
-  50% {
-    opacity: 0;
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Animated background: Floating particles */
-@keyframes float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-.particle {
+/* Canvas should cover the entire screen */
+canvas {
+  display: block;
   position: absolute;
-  background-color: #00ff00; /* Light green transparent particles */
-  border-radius: 50%;
-  animation: float 6s ease-in-out infinite;
+  top: 0;
+  left: 0;
+  z-index: -1; /* Send canvas behind other content */
 }
 
-.particle-small {
-  width: 8px;
-  height: 8px;
-  bottom: 10%;
-  left: 20%;
-  animation-duration: 5s;
+/* Overall Body Styles */
+body {
+  font-family: "Press Start 2P", monospace;
+  background: #000; /* Linear gradient background */
+  color: #00ff00;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden; /* Prevent scrollbars */
 }
 
-.particle-medium {
-  width: 12px;
-  height: 12px;
-  top: 30%;
-  right: 15%;
-  animation-duration: 7s;
+/* Chatbot Container */
+.chatbot-container {
+  width: 80%;
+  max-width: 800px;
+  background-color: #000000;
+  border-radius: 8px;
+  box-shadow: 0px 0px 15px rgba(0, 255, 0, 0.5);
+  overflow: hidden;
 }
 
-.particle-large {
-  width: 20px;
-  height: 20px;
-  top: 70%;
-  left: 45%;
-  animation-duration: 8s;
+/* Chatbot Header */
+.chatbot-header {
+  background-color: #000000;
+  padding: 10px;
+  text-align: center;
+  color: #00ff00;
+  border-bottom: 2px solid #00ff00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-@media screen and (max-width: 768px) {
-  body {
+.bot-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+/* Chatbot Messages */
+.chatbot-messages {
+  padding: 15px;
+  height: 60vh; /* Adjust height based on screen size */
+  max-height: 400px; /* Prevent excessive growth */
+  overflow-y: auto;
+  border-bottom: 1px solid #00ff00;
+  font-size: 14px; /* Slightly larger for better readability */
+}
+
+/* Chatbot Message Styles */
+.chatbot-message {
+  margin-bottom: 10px;
+  padding: 15px;
+  background-color: #0d0d0d;
+  border-left: 4px solid #00ff00;
+  font-family: "Press Start 2P", monospace;
+  color: #00ff00;
+  line-height: 1.6; /* Improved readability */
+}
+
+/* List Styles */
+.chatbot-message ul {
+  padding-left: 20px;
+  list-style-type: disc; /* Disc bullets */
+}
+
+.chatbot-message li {
+  margin-bottom: 8px; /* Space between items */
+}
+
+/* Emphasize Important Points */
+.chatbot-message b {
+  color: #00ff00;
+}
+
+.chatbot-message i {
+  color: #cccccc;
+}
+
+/* Chatbot Options */
+.chatbot-options {
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap; /* Make buttons wrap on smaller screens */
+  justify-content: center;
+}
+
+.chatbot-options button {
+  background-color: #0d0d0d;
+  color: #00ff00;
+  border: 1px solid #00ff00;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Press Start 2P", monospace;
+}
+
+.chatbot-options button:hover {
+  background-color: #00ff00;
+  color: #0f0f0f;
+}
+
+/* Responsive Adjustments */
+@media only screen and (max-width: 600px) {
+  .chatbot-container {
+    width: 100%;
+    height: 100vh;
+  }
+
+  .chatbot-messages {
+    height: 50vh; /* Reduced height for smaller screens */
+  }
+
+  .chatbot-message {
+    font-size: 12px;
     padding: 10px;
   }
-  header,
-  section {
-    padding: 15px;
-    box-shadow: none;
+
+  .chatbot-options button {
+    width: 100%; /* Full-width buttons on small screens */
+    margin: 5px 0;
   }
-  h1 {
-    font-size: 1.5em;
-  }
-  h2 {
-    font-size: 1.2em;
-  }
-  h3 {
-    font-size: 1em;
-  }
-  ul {
-    padding-left: 15px;
-  }
+}
+
+/* Social Links */
+.social-links {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.social-links a {
+  color: #00ff00;
+  text-decoration: none;
+  margin: 0 10px;
+  font-family: "Press Start 2P", monospace;
+  font-size: 14px;
+}
+
+.social-links a:hover {
+  color: #0f0f0f;
+  background-color: #00ff00;
+  padding: 2px 5px;
+  border-radius: 5px;
 }

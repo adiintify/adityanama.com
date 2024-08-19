@@ -4,181 +4,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aditya Nama Resume</title>
+    <title>Adiintify - Chatbot</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="icon" href="bot.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div class="resume-container">
-        <header>
-            <h1 class="blink">Aditya Nama</h1>
-            <p>Email: <a href="mailto:complex@duck.com">complex@duck.com</a></p>
-            <p><a href="https://github.com/adiintify">GitHub</a> | <a
-                    href="https://www.linkedin.com/in/adiintify/">LinkedIn</a> | <a
-                    href="https://spoofing.medium.com/">Medium</a> | <a
-                    href="https://www.credly.com/users/adiintify/badges">Credly</a> | <a
-                    href="https://www.holopin.io/@adiintify#badges">Holopin</a> | <a
-                    href="https://twitter.com/adiintify">Twitter</a></p>
-        </header>
-
-        <p>Check out my <a href="/password_generator/">Password Generator</a></p>
-
-        <section class="work-experience">
-            <h2>Work Experience</h2>
-            <div class="job">
-                <h3><span class="company">Nykaa</span> - Senior Security Engineer</h3>
-                <p>(Dec 2022 - Present)</p>
-                <ul>
-                    <li>Configuring and managing Cloudflare for various web applications, monitoring and analysing
-                        traffic patterns to identify potential security threats or performance issues, implementing
-                        firewall rules, DDoS protection, and other security measures.</li>
-                    <li>Designing and implementing cloud custodian policies to enforce compliance and governance
-                        requirements across cloud resources and automating cloud resource provisioning and
-                        deprovisioning workflows.</li>
-                    <li>Configuring and managing AWS security controls, including IAM, organizations, SSO, VPC, S3, EC2,
-                        RDS, ELB, CloudTrail, Config, Inspector, GuardDuty, WAF, and more.</li>
-                    <li>Collaborating with cross-functional teams, including DevOps and network engineers, to design and
-                        implement secure cloud architectures.</li>
-                    <li>Developing and maintaining security incident response plans and procedures to effectively
-                        respond to security incidents and breaches.</li>
-                </ul>
+    <canvas id="canvas"></canvas>
+    <div class="chatbot-container">
+        <div class="chatbot-header">
+            <img src="bot.png" alt="Bot Icon" class="bot-icon">
+            <h2>Adiintify</h2>
+        </div>
+        <div class="chatbot-messages" id="chatbotMessages">
+            <div class="chatbot-message">
+                Welcome to Adiintify BOT! If you want to know more about Aditya, select any options below. And remember,
+                the bot has its eyes on you! 👀
             </div>
-            <div class="job">
-                <h3><span class="company">Great Learning</span> - Senior Security Operations Engineer</h3>
-                <p>(Jan 2021 - Dec 2022)</p>
-                <ul>
-                    <li>Security implementation from the ground up.</li>
-                    <li>Helped team in reproducing, triaging, and addressing application security vulnerabilities.</li>
-                    <li>Wrote comprehensive reports including assessment-based findings, outcomes, and propositions for
-                        further system security enhancement.</li>
-                    <li>Developed technical solutions and new security tools to help mitigate security vulnerabilities
-                        and automate repeatable tasks.</li>
-                    <li>Built complex application stacks from the scratch utilizing Infrastructure as Code with the AWS
-                        Cloud Development Kit to minimize human error, future proofing, and enable quick deployment for
-                        disaster recovery.</li>
-                    <li>Deployed Incident Response and Alerting with AWS CloudWatch, AWS CloudTrail, AWS Config, Amazon
-                        Inspector, Amazon GuardDuty, and AWS Security Hub.</li>
-                    <li>Deployment and maintenance of AWS WAF for all apps, as well as designing WAF rules to counter
-                        risks like the OWASP Top 10, known bad inputs, and bot control.</li>
-                    <li>Deployment and maintenance of security awareness trainings to reduce human risks for our
-                        organisation.</li>
-                    <li>Designed and integrated endpoint protection solutions into the organization's infrastructure
-                        based on the business requirements.</li>
-                    <li>Evaluated internal controls based on various security standards (ISO 270001, SOC 2, NIST
-                        Cybersecurity Framework).</li>
-                </ul>
-            </div>
-            <div class="job">
-                <h3><span class="company">eSec Forte® Technologies</span> - Information Security Consultant</h3>
-                <p>(Jan 2019 - Dec 2020)</p>
-                <ul>
-                    <li>Performed manual and automated dynamic grey-box security testing and remediation testing on a
-                        wide range of web and native mobile-based applications hosted in multiple pre-prod environments.
-                    </li>
-                    <li>Provided approval for applications to be released into a production environment based on the
-                        severity of open vulnerabilities in the application environment and the intended remediation
-                        date.</li>
-                    <li>Finding the root cause of security vulnerabilities in the source code, prioritized the critical
-                        issues, and provided detailed guidance on how to fix them so developers can resolve issues in
-                        less time with the help of Micro Focus Fortify Static Code Analyzer.</li>
-                    <li>Built mechanisms to ensure that all services, applications, and tools are secure throughout the
-                        software development lifecycle.</li>
-                    <li>Managed Security Scorecard and BitSight Security ratings to monitor the integrity of the
-                        infrastructure by keeping tabs on the configuration of outdated browsers, operating systems,
-                        expired FTP services, and weak or expired certificates.</li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="certifications">
-            <h2>Certifications</h2>
-            <ul>
-                <li>AWS Certified Cloud Practitioner (Valid until Jan 2025)</li>
-                <li>AWS Certified Security – Specialty (Valid until Sep 2026)</li>
-            </ul>
-        </section>
-
-        <section class="skills">
-            <h2>Skills</h2>
-            <ul>
-                <li>Programming experience with TypeScript, JavaScript, Python, and SQL.</li>
-                <li>Hands-on expertise with various security tools like Burpsuite, SQLmap, Nexpose, Nessus, Wireshark,
-                    Metasploit, Nmap, etc.</li>
-                <li>Knowledge of several security solutions such as IBM QRadar (SIEM), ARCOS (PIM), F-Secure/Trend Micro
-                    (HBSS) and Forti DB (DAM).</li>
-                <li>Familiarity with Windows, Linux, and Macintosh operating systems.</li>
-                <li>Hands-on experience with Adobe Creative Suite, including Photoshop, Lightroom, Premiere Pro, After
-                    Effects, and Illustrator.</li>
-            </ul>
-        </section>
-
-        <section class="projects">
-            <h2>Projects</h2>
-            <ul>
-                <li><strong>Session Monitor using Raspberry Pi:</strong> Monitoring the internet traffic of a locked
-                    Windows machine running version 7 or below. The Raspberry Pi emulates an Ethernet device over USB
-                    and hijacks all internet traffic from the locked machine.</li>
-                <li><strong>USB Intruder:</strong> Arduino-based device for offensive security goals such as installing
-                    backdoors, stealing documents, and capturing credentials.</li>
-                <li><strong>Secure Text Transfer using Diffie-Hellman Key Exchange Based on Cloud:</strong> Securely
-                    transferring text between two parties over a cloud-based platform using the Diffie-Hellman key
-                    exchange algorithm.</li>
-            </ul>
-        </section>
-
-        <section class="education">
-            <h2>Education</h2>
-            <p>Bachelor of Technology in Computer Science and Engineering</p>
-            <p>NITRA Technical Campus, Dr. A.P.J. Abdul Kalam Technical University</p>
-        </section>
-
-        <section class="community-contributions">
-            <h2>Community Contributions</h2>
-            <div class="contribution">
-                <h3>AWS Community Builder</h3>
-                <p>March 2023 – Present</p>
-            </div>
-            <div class="contribution">
-                <h3>BBWIC Foundation</h3>
-                <p>Community and Development Board Coordinator (03/2024- Present)</p>
-                <ul>
-                    <li>Planned and organized community events to promote our mission and vision.</li>
-                    <li>Engaged with community members to build relationships and support our initiatives.</li>
-                    <li>Executed day-to-day tasks related to community engagement and event management.</li>
-                </ul>
-            </div>
-            <div class="contribution">
-                <h3>DEF CON Delhi Group DC 9111</h3>
-                <p>Core Team- Video Editor (06/2020- Present)</p>
-                <ul>
-                    <li>Video production and editing for YouTube channel.</li>
-                    <li>Designing certificates and posters.</li>
-                </ul>
-            </div>
-            <div class="contribution">
-                <h3>NULLCON & BSIDES DELHI</h3>
-                <p>Volunteer</p>
-                <ul>
-                    <li>Appointed as a host for CXO Panels and workshops.</li>
-                    <li>During the event, helping team members and attendees with any concerns.</li>
-                </ul>
-            </div>
-            <div class="contribution">
-                <h3>Rotaract Club of Capital City New Delhi, District 3012</h3>
-                <p>Treasurer (07/2018-19)</p>
-                <ul>
-                    <li>Oversee and present budgets, accounts, and financial statements to the management committee.
-                    </li>
-                    <li>Ensure that appropriate financial systems and controls are in place.</li>
-                    <li>Ensure that record-keeping and accounts meet the conditions of funders or statutory bodies.</li>
-                </ul>
-            </div>
-        </section>
+        </div>
+        <div class="chatbot-options">
+            <button onclick="reply('contact')">Contact Information</button>
+            <button onclick="reply('work')">Work Experience</button>
+            <button onclick="reply('skills')">Skills</button>
+            <button onclick="reply('certifications')">Certifications</button>
+            <button onclick="reply('projects')">Projects</button>
+            <button onclick="reply('education')">Education</button>
+            <button onclick="reply('community')">Community Contributions</button>
+            <button onclick="reply('github')">GitHub</button>
+            <button onclick="reply('linkedin')">LinkedIn</button>
+            <button onclick="reply('medium')">Medium</button>
+            <button onclick="reply('credly')">Credly</button>
+            <button onclick="reply('holopin')">Holopin</button>
+            <button onclick="reply('twitter')">Twitter</button>
+        </div>
     </div>
-    <div class="particle particle-small"></div>
-    <div class="particle particle-medium"></div>
-    <div class="particle particle-large"></div>
+    <script src="script.js"></script>
 </body>
 
 </html>
